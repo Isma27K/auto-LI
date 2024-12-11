@@ -1,0 +1,78 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d3f1df;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.login-box {
+  width: 400px;
+  padding: 40px;
+  background-color: #525b44;
+  border-radius: 25px;
+  color: #d3f1df;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  width: 95%;
+}
+
+.login-label {
+  font-family: "Nunito", sans-serif;
+  font-size: 12px;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b7d6c2;
+  border-radius: 5px;
+  background-color: #b7d6c2;
+  font-family: "Nunito", sans-serif;
+  color: #525b44;
+}
+
+.login-button {
+  background-color: #5a6c57;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #d3f1df;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.login-button:hover {
+  background-color: #6b8e23;
+}
+
+.login-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(91, 108, 87, 0.5);
+}
