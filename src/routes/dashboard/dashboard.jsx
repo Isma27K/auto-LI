@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./dashboard.scss";
-import Dashboard_Component from "../../components/game/dashboard.component";
+import Game from "../../components/game/dashboard.component";
 import profileImage from "../../assets/me.png";
+import SettingPage from "../../components/setting/setting.component";
+import Dashboard_component from "../../components/dashboard/dashboard.component";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -80,17 +82,14 @@ const Dashboard = () => {
         </div>
         <div className="content">
           {position === 1 && (
-            <div>
-              {/* TODO: Add content for the Dashboard position */}
-              <h1>Dashboard Content</h1>
-            </div>
-          )}
-          {position === 2 && <Dashboard_Component />}
+            <Dashboard_component />
+          )
+          }
+          {position === 2 &&
+            <Game />
+          }
           {position === 3 && (
-            <div>
-              {/* TODO: Add content for the Setting position */}
-              <h1>Settings Content</h1>
-            </div>
+            <SettingPage/>
           )}
         </div>
       </div>

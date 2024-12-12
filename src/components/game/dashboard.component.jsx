@@ -6,7 +6,7 @@ import Daily from "./mode/daily/daily.component";
 import Weekly from "./mode/weekly/weekly.component";
 
 
-const Dashboard_Component = () => {
+const Game = () => {
   const [checked, setChecked] = useState(true);
 
   function chackChacked() {
@@ -27,4 +27,4 @@ const Dashboard_Component = () => {
   );
 };
 
-export default Dashboard_Component;
+export default Game;

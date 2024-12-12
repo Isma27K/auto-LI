@@ -1,0 +1,48 @@
+.settings-container {
+    padding: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+
+    .settings-card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+        .ant-card-body {
+            padding: 24px;
+        }
+    }
+
+    .settings-section {
+        margin-bottom: 24px;
+
+        .ant-typography {
+            margin-bottom: 16px;
+        }
+
+        .ant-form-item {
+            margin-bottom: 16px;
+        }
+    }
+
+    .ant-input-password {
+        width: 100%;
+    }
+
+    .ant-divider {
+        margin: 24px 0;
+    }
+
+    .ant-form-item-label {
+        .ant-space {
+            align-items: center;
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .settings-container {
+        padding: 16px;
+    }
+}

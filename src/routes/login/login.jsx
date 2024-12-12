@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { message } from "antd";
 import "./Login.scss";
 
 const Login = () => {
@@ -7,7 +8,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
-
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -17,14 +17,47 @@ const Login = () => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Here you can add logic to handle the login process
+
     console.log("Username:", username);
     console.log("Password:", password);
 
-    navigate('/dashboard');
-  };
+    try {
+        const response = await fetch("http://localhost:8000/api/v1/login/", {
+            method: "POST",
+            mode: "cors", // Ensure the CORS mode is set if you're making cross-origin requests
+            headers: {
+                "Content-Type": "application/json", // Set the Content-Type to JSON
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password,
+            }),
+        });
+
+        // Check if the response is successful (200 OK)
+        if (response.ok) {
+            const data = await response.json();  // Parse the response body as JSON
+
+            // Store the tokens in localStorage
+            sessionStorage.setItem("atoken", data.access);
+            sessionStorage.setItem("rtoken", data.refresh);
+
+            message.success("Login successful!");
+            navigate("/dashboard");  // Navigate to the dashboard after successful login
+        } else {
+            // If the response status is not 200, show an error message
+            const errorData = await response.json();  // Parse error message from server
+            message.error(errorData.detail || "Login failed!");  // Show error message from the server or a default message
+        }
+    } catch (error) {
+        // Handle any network or unexpected errors
+        console.error("Error during login:", error);
+        message.error("An error occurred during login.");
+    }
+};
+
 
   return (
     <div className="login-container">

@@ -1,0 +1,72 @@
+.weekly-container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  
+  .form-card {
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+
+    .ant-card-body {
+      padding: 24px;
+    }
+
+    .form-section {
+      margin-top: 1.5rem;
+
+      .switches {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .prompt-input {
+        border-radius: 8px;
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .ant-upload-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+    }
+  }
+
+  .files-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+
+    .ant-list-item {
+      padding: 16px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.02);
+      }
+
+      .ant-list-item-meta-title {
+        margin-bottom: 4px;
+      }
+
+      .ant-list-item-meta-description {
+        color: rgba(0, 0, 0, 0.45);
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .weekly-container {
+    padding: 1rem;
+
+    .switches {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}
